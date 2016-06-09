@@ -8,6 +8,11 @@ init_stock_lookup = function(){
   // with the data that's returned so you have to re-initialize it
   init_stock_lookup();
   });
+  //errors
+  $('#stock-lookup-form').on('ajax:error', function(event, xhr, status, error) {
+    $('#stock-lookup-results').replaceWith(' ');
+    $('#stock-lookup-errors').replaceWith('Stock was not found.');
+  });
 }
 
 
